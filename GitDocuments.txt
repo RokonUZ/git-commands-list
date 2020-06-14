@@ -1,0 +1,205 @@
+==================================
+    PART : 01
+    1. COMMIT
+    2. PUSH
+    3. PULL
+    * SOME BASIC COMMANDS
+==================================
+
+1. GIT INITIALIZE
+=> command : git init
+## Comment : Do once for a project (Don't do this twice for same project)
+
+
+2. CHECK GIT CREATED FILE
+=> command : ls -al (linux + mac)
+
+3. ADD NEW FILE TO GIT
+=> command : git add file_name|-al
+
+4. GIT COMMIT
+=> command : git commit -m "what we have done" file_name
+## Comment : git commit -am "what you have done" (-am for all file commit which not good)
+** another sortcut for commit : gc -m "what you have done" file_name
+
+5. GIT STATUS
+=> command : git status
+
+6. GIT DIFF
+=> command : git diff | git diff HEAD
+## comment : For checking what we've changes in our file
+
+7. GIT LOG
+=> command : git log
+## comment : Using this command we can see all history of project
+
+8. GIT SHOW
+=> command : git show commit_id
+## comment : Using this command we can see specific commit history
+
+----------------------------------------------------------------------
+REMEMBER :
+* We should to use meaningful messages for commit
+* To commiting a task, We should to commit only for those files 
+  those are related with its task
+* After commit if you think it was wrong to commit 
+  or you need to add or more files then you need to "reset" or "amend"
+-----------------------------------------------------------------------
+
+=============================
+   PART : 02 
+   * BACK TO PREVIOUS COMMIT
+   * DO RESET
+   * DO AMEND
+=============================
+
+9. GIT CHECKOUT
+=> command : git checkout commit_id
+## comment : Using this command you can back to your where you commited for next changes
+** For specific file : git checkout commit_id file_name
+
+10. GIT CHECKOUT MASTER
+=> command : git checkout master
+## It will back your project to head or master
+** For single file : git checkout master -f
+
+11. GIT RESET (SOFT)
+=> command : git reset --soft commit_id
+## comment : Using this command we can delete or remove specific commit
+             But changes remain exist in the project
+            
+
+12. GIT RESET (HARD)
+=> command : git reset --hard commit_id
+## comment : Using this command we can delete or remvove specific commit
+             and project changes will be also removed for the relavant commit
+
+13. GIT REFLOG
+=> command : git reflog
+## comment : Through this command we can see all activity status of project
+
+14. GIT : IF WE WANT TO BACK OUR LAST HARD RESET STAGE OF PROJECT
+=> command : git reset HEAD{Number}
+=> command : git reset --hard
+
+15. GIT AMEND
+=> command : git commit --amend
+## comment : Using this command we can merge same commit for multiple files
+
+-------------------------------------------------------------
+REMEMBER :
+* NEVER RESET push/publish commit
+* USE RESET COMMAND those are not push/publish yet
+* USE REVERT for push/publish commit
+-------------------------------------------------------------
+
+
+=============================
+   PART : 03
+   * GIT STASH
+   * GIT CLEAN
+=============================
+
+16. GIT STASH : WE DON'T WANT TO COMMIT FOR EXPERIMENTAL PERIOD OF OUR PROJECT
+    BUT WE WANT TO SAVE OUR CHANGES AND AFTER WE CAN ADD CHANGES OR REMOVE
+    THAT'S WHY RIGHT NOW WE JUST WANT TO SAVE OUR CHANGES TEMPORARILY
+
+=> command : git stash 
+
+17. GIT STASH LIST
+=> command : git stash list
+## comment : We can see total stash list of our project
+
+18. GIT STASH POP/APPLY
+=> command : git stash pop
+## comment : Back to last stash of project
+=> command : git stash pop stash@{1}
+## comment : Back to specific stash of project
+
+19. GIT STASH CLEAR
+=> command : git stash clear
+## comment : Remove or clear or stashes of project
+
+20. GIT CLEAN
+=> command : git clean -f -n
+## comment : First check, what's type of files will be delete
+             THEN :
+=> command : git clean -f
+## comment : This command will delete all the files and you will not back this file again
+
+
+=============================
+   PART : 04
+   * GIT PUSH
+   * GIT PULL
+=============================
+
+21. GIT REMOTE
+=> command : git remote add origin repository_url
+
+22. GIT SHOW
+=> command : git remote show
+
+23. GIT CLONE
+=> command : git clone repository_url
+
+24. GIT PUSH
+=> command : git push -u origin master
+
+25. GIT PULL
+=> command : git pull origin master
+
+26. CHECK GIT ORIGIN
+=> command : git remote show origin
+
+-----------------------------
+27. GIT ALIACE
+=> command : alias gc="git commit"
+## comment : Using this command we can create shortcut of git commands
+
+
+STEPS :
+    1. Create file for alias
+    2. Put all alias command
+        Example: 
+        alias gc="git commit"
+        alias gs="git status"
+        alias gl="git log"
+    3. run file in your git directory
+    4. Check and hope that you can use alias command easily
+-----------------------------
+
+=============================
+   PART : 05
+   * FIXED GIT CONFLICT
+=============================
+
+*** SOME EXPLANATION ABOUT GIT
+## INSTALL GIT MERGETOOL
+
+==============================================================
+GIT IGNORE :
+1. First, make sure that you don't have any changes to commit;
+2. Edit or create your .gitignore and put the follow code:
+*.log
+
+*.pot
+
+*.pyc
+
+*/*/*/__pycache__/
+
+*/*/__pycache__/
+
+*/__pycache__/
+
+3. Save -> git add . -> git commit
+4. 'Clean Git Hub Cache' for your repo:
+git rm -rf --cached .
+
+git add .
+
+5. Commit and it's done!
+
+I hope that this can help you.
+==============================================================
