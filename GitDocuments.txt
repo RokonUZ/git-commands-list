@@ -177,6 +177,11 @@ STEPS :
 *** SOME EXPLANATION ABOUT GIT
 ## INSTALL GIT MERGETOOL
 
+-------------------------------
+*** REMOVE .git file (This will delete all repositories and commit means EVERYTHING)
+## command : rm -rf .git
+-------------------------------
+
 ==============================================================
 GIT IGNORE :
 1. First, make sure that you don't have any changes to commit;
